@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, StyleSheet, FlatList } from 'react-native';
 import axios from 'axios';
+import DropdownComponent from '@/components/Dropdown';
 
 
 export default async function dateEvent() {
@@ -31,8 +32,14 @@ async function fetchData() {
 fetchData();
 
 return (
+    
     <View style={styles.container}>
-        <View style={styles.card}>
+        <View>
+            <Text>
+            <DropdownComponent />
+            </Text>
+        </View>
+        <View>
             <Text>Enter Month: </Text>
             <TextInput 
                 style={styles.input}
@@ -43,7 +50,7 @@ return (
             </TextInput>
         </View>
 
-        <View style={styles.card}>
+        <View>
             <Text>Enter Date: </Text>
             <TextInput 
                 style={styles.input}
@@ -61,13 +68,7 @@ return (
         container: {
             flex: 1,
             justifyContent: 'center',
-            alignItems: 'center',
-        },
-        card: {
-            borderWidth: 2,
-            padding: 15,
-            paddingHorizontal: 100,
-            borderRadius: 30,
+            padding: 50
         },
         input: {
             borderWidth: 1,
